@@ -11,8 +11,9 @@ import traceback
 
 # --- CONFIGURACIÓN ---
 PRINTER_NAME = "EPSON TM-T20IV Receipt"
-CERTFILE = 'cert.pem'
-KEYFILE = 'key.pem'
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+CERTFILE = os.path.join(SCRIPT_DIR, 'cert.pem')
+KEYFILE = os.path.join(SCRIPT_DIR, 'key.pem')
 
 # --- APLICACIÓN FLASK ---
 app = Flask(__name__)
