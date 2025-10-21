@@ -1,0 +1,22 @@
+[Unit]
+Description=Servidor de Impresion de Tickets (Python HTTPS Server)
+After=network.target
+
+[Service]
+# Reemplaza 'tu_usuario' con el usuario bajo el que quieres que corra el script
+User=riocentro
+# El directorio donde se encuentra tu script y los certificados
+WorkingDirectory=/opt/puntodecanje_printer
+# Usa la ruta ABSOLUTA al intérprete Python de tu venv y al script
+ExecStart=/usr/bin/python3 /opt/puntodecanje_printer/linux/print_server_linux.py
+# Clave: Reinicia el script automaticamente si falla o se detiene
+Restart=always
+# Retraso entre intentos de reinicio
+RestartSec=5
+# Salida de log a systemd journal
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+
+WantedBy=multi-user.target
