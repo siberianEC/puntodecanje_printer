@@ -52,7 +52,7 @@ def print_image_object(pil_image, printer_name):
         hDC.StartPage()
 
         dib = ImageWin.Dib(pil_image)
-        dib.draw(hDC.GetSafeHdc(), (0, 0, img_width, img_height))
+        dib.draw(hDC.GetSafeHdc(), (0, 0, img_width+200, img_height+150))
 
         hDC.EndPage()
         hDC.EndDoc()
